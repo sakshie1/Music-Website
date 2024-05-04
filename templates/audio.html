@@ -1,0 +1,20 @@
+<!-- add_audio.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Audio File</title>
+</head>
+<body>
+    <h2>Add Audio File</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="title">Title:</label>
+        <input type="text" name="title" required><br>
+
+        <label for="audio_file">Audio File:</label>
+        <input type="file" name="audio_file" accept="audio/*" required><br>
+
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>

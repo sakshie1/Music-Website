@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+
+{% block body %}
+{% load static %}
+  <center>
+<!--
+<div class="card mb-3" style="max-width: 640px; padding-top:3%;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="/media/{{song.pimage}}" class="img-fluid rounded-start" style="height: 300px; " alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title" style="color: green; font-weight: 550;" >{{song.name}}</h5>
+          <p class="card-text">Singer:{{song.singer}}</p>
+          <br><br>
+          <a href=""><button class="btn btn-outline-danger">Listen song</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</center>
+-->
+<div class="container bg-dark">
+  <div class="row">
+    <div class="col md-6" style="padding-top: 10%; padding-bottom: 10%;">
+      <img src="/media/{{song.pimage}}" alt="" height="250px" width="350">
+    </div>
+    <div class="col md-4" style="padding-top: 10%; padding-bottom: 10%;">
+      <h2 style=" padding-top: 6%; font-weight: 550; color: green;">Title: {{song.name}}</h2>
+      <h4 style=" padding-top: 6%; font-weight: 550; color: white;">Singer: {{song.singer}}</h4>
+      <audio controls style="padding-top: 2%;">
+        <source src="{{ song.audio_file.url }}" type="audio/mpeg">
+      </audio>
+      
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,28 @@
+<!-- song_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ song.name }}</h1>
+  <p>By: {{ song.singer }}</p>
+  <img src="{{ song.pimage.url }}" alt="Song Image">
+  <audio controls>
+    <source src="{{ song.audio_file.url }}" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+
+  {% if user.is_authenticated %}
+    <form method="post" action="{% url 'like_song' song.id %}">
+      {% csrf_token %}
+      <button type="submit">
+        {% if user in song.likes.all %}
+          Unlike
+        {% else %}
+          Like
+        {% endif %}
+      </button>
+    </form>
+  {% endif %}
+
+  <p>Likes: {{ song.likes.count }}</p>
+{% endblock %}

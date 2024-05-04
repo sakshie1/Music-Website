@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Register</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{% static 'css/bootstrap.min.css' %}">
+    <style>
+        .box{
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5 bg-dark text-light" style="padding-bottom: 10%;">
+        <div class="row mt-5">
+        <div class="col-sm-4 mx-auto mt-5 shadow">
+          <center>
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-music-note-list" viewBox="0 0 16 16">
+              <path d="M12 13c0 1.105-1.12 2-2.5 2S7 14.105 7 13s1.12-2 2.5-2 2.5.895 2.5 2"/>
+              <path fill-rule="evenodd" d="M12 3v10h-1V3z"/>
+              <path d="M11 2.82a1 1 0 0 1 .804-.98l3-.6A1 1 0 0 1 16 2.22V4l-5 1z"/>
+              <path fill-rule="evenodd" d="M0 11.5a.5.5 0 0 1 .5-.5H4a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 7H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5m0-4A.5.5 0 0 1 .5 3H8a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5"/>
+            </svg>
+            <h2 style="color: green">Millions of Songs.</h2>
+            <h2 style="color: green;">Free on Rhythm</h2>
+          </center>
+        <h4 class="text-center">User Registration</h4>
+       
+        <form method="post">
+          {% csrf_token %}
+            <div class="mb-3">
+                <label for="Input1" class="form-label">UserName</label>
+                <input type="email" class="form-control" name="uname" placeholder="name@example.com">
+              </div>
+
+              <div class="mb-3">
+                <label for="Input3" class="form-label">password</label>
+                <input type="password" class="form-control" name="upass" id="Input3" placeholder="password">
+              </div>
+
+              <div class="mb-3">
+                <label for="Input3" class="form-label">Confirm password</label>
+                <input type="password" class="form-control" name="ucpass" id="Input3" placeholder="confirm password">
+              </div>
+
+              <div class="mb-3">
+                <input type="submit" class="btn btn-primary"  value="Register">&nbsp;&nbsp;&nbsp;&nbsp;
+                Already Register ? 
+                <a href="/login" style="text-decoration: none;">Login</a>
+              </div>
+        </form>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="{% static 'js/bootstrap/min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+</body>
+</html>

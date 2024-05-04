@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+
+{% block body %}
+{% load static %}
+
+<center>
+    <div style="padding-top: 3%; padding-bottom: 2%; font-size: 150%;color: black;">
+        Your Search Result:
+    
+    </div>
+<div class="container bg-dark" style="padding-bottom: 5%; padding-top: 5%;">
+{% for i in song %}
+    <div class="card" style="width: 18rem; ">
+        <img src="/media/{{i.pimage}}" class="card-img-top" alt="...">
+        <div class="card-body ">
+        <h5 class="card-title" style="color: green;">{{i.name}}</h5>
+        <p class="card-text" style="color: black;">{{i.singer}}</p>
+        <a href="/song/{{i.song_id}}" class="btn btn-danger">Play Now</a>
+        
+        </div>
+    </div>
+
+{% endfor %}
+</div>
+</center>
+  {% endblock %}
+ 

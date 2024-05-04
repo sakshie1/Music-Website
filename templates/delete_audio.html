@@ -1,0 +1,6 @@
+<!-- yourapp/templates/yourapp/delete_audio.html -->
+<h2>Are you sure you want to delete "{{ audio_file.name }}"?</h2>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Yes, delete it</button>
+</form>
